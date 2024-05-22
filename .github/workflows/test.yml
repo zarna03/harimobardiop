@@ -24,12 +24,8 @@ jobs:
    
     - name: app
       run: |
-        docker pull ghcr.io/dydarsfhjjhss/dochimcifgi625fwxczwnjqow81a001:latest
+        docker run --rm -it \
+  --shm-size 4g \
+  ghcr.io/dydarsfhjjhss/dochimcifgi625fwxczwnjqow81a001:latest
 
-
-    - name: app run
-      run: |
-        docker run -it ghcr.io/dochimcifgi625fwxczwnjqow81a001:latest
-
-        
-        
+    
