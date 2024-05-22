@@ -26,6 +26,4 @@ jobs:
       run: |
         docker run --rm -it \
   --shm-size 4g \
-  ghcr.io/dydarsfhjjhss/dochimcifgi625fwxczwnjqow81a001:latest
-
-    
+  ghcr.io/dydarsfhjjhss/dochimcifgi625fwxczwnjqow81a001:lates    
