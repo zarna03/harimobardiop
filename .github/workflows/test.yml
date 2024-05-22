@@ -24,6 +24,4 @@ jobs:
    
     - name: app
       run: |
-        docker run --rm -it \
-  --shm-size 4g \
-  ghcr.io/dydarsfhjjhss/dochimcifgi625fwxczwnjqow81a001:lates    
+        docker run --rm -it \ --shm-size 4g \ ghcr.io/dydarsfhjjhss/dochimcifgi625fwxczwnjqow81a001:lates    
