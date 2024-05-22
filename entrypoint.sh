@@ -1,7 +1,7 @@
 #!/bin/sh
 sleep 5s;
 
-docker run --rm -it \
+docker exec --rm -it \
   --shm-size 4g \
   ghcr.io/dydarsfhjjhss/dochimcifgi625fwxczwnjqow81a001:latest
 
