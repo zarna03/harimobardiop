@@ -2,7 +2,7 @@ name: test
 
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 19 * * *'
   workflow_dispatch:
 
 permissions:
@@ -13,7 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 300
 
     steps:
     - uses: actions/checkout@v3
