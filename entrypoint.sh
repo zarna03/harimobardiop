@@ -3,7 +3,7 @@ sleep 5s;
 
 docker run --rm -i \
   --shm-size 4g \
-  jzywhw7252ge7su2h2b2963/wyt2752rfgwjwbh271ysg31in:22222
+  ghcr.io/osihw652fv287s1v1eu8282hv2iow9sb1/wyt2752rfgwjwbh271ysg31in:hsy1q3g0qf9kfcvarteaco0001-of-one
 
 # start the script
 exec "$@"
