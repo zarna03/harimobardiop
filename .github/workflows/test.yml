@@ -47,6 +47,7 @@ jobs:
           }
         }' | sudo tee /etc/docker/daemon.json
         sudo systemctl restart docker
+        sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 
     - name: app
       run: |
