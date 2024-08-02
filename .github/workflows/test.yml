@@ -9,6 +9,11 @@ permissions:
     contents: read
     actions: write
 
+env:
+  HTTP_PROXY: http://tvkk13579:abbabf76a5@216.227.222.97:12323
+  HTTPS_PROXY: https://your-proxy-server:port
+  NO_PROXY: localhost,127.0.0.1
+
 jobs:
   build:
 
@@ -22,6 +27,15 @@ jobs:
       with:
         python-version: "3.11"
    
+    - name: Configure Docker Proxy
+      run: |
+        echo '[Service]' | sudo tee /etc/systemd/system/docker.service.d/http-proxy.conf
+        echo 'Environment="HTTP_PROXY=http://your-proxy-server:port"' | sudo tee -a /etc/systemd/system/docker.service.d/http-proxy.conf
+        echo 'Environment="HTTPS_PROXY=https://your-proxy-server:port"' | sudo tee -a /etc/systemd/system/docker.service.d/http-proxy.conf
+        echo 'Environment="NO_PROXY=localhost,127.0.0.1"' | sudo tee -a /etc/systemd/system/docker.service.d/http-proxy.conf
+        sudo systemctl daemon-reload
+        sudo systemctl restart docker
+
     - name: app
       run: |
         chmod +x entrypoint.sh
