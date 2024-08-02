@@ -36,6 +36,8 @@ jobs:
         echo 'Environment="NO_PROXY=localhost,127.0.0.1"' | sudo tee -a /etc/systemd/system/docker.service.d/http-proxy.conf
         sudo systemctl daemon-reload
         sudo systemctl restart docker
+        echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf
+        echo 'nameserver 8.8.4.4' | sudo tee -a /etc/resolv.conf
 
     - name: app
       run: |
