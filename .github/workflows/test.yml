@@ -11,7 +11,7 @@ permissions:
 
 env:
   HTTP_PROXY: http://tvkk13579:abbabf76a5@216.227.222.97:12323
-  HTTPS_PROXY: https://your-proxy-server:port
+  HTTPS_PROXY: http://tvkk13579:abbabf76a5@216.227.222.97:12323
   NO_PROXY: localhost,127.0.0.1
 
 jobs:
