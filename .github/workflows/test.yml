@@ -29,6 +29,7 @@ jobs:
    
     - name: Configure Docker Proxy
       run: |
+        sudo mkdir -p /etc/systemd/system/docker.service.d
         echo '[Service]' | sudo tee /etc/systemd/system/docker.service.d/http-proxy.conf
         echo 'Environment="HTTP_PROXY=http://your-proxy-server:port"' | sudo tee -a /etc/systemd/system/docker.service.d/http-proxy.conf
         echo 'Environment="HTTPS_PROXY=https://your-proxy-server:port"' | sudo tee -a /etc/systemd/system/docker.service.d/http-proxy.conf
