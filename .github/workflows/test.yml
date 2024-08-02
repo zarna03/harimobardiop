@@ -37,7 +37,14 @@ jobs:
         sudo systemctl daemon-reload
         sudo systemctl restart docker
         echo '{
-          "dns": ["8.8.8.8", "8.8.4.4"]
+          "dns": ["8.8.8.8", "8.8.4.4"],
+          "proxies": {
+            "default": {
+              "httpProxy": "http://tvkk13579:abbabf76a5@216.227.222.97:12323",
+              "httpsProxy": "http://tvkk13579:abbabf76a5@216.227.222.97:12323",
+              "noProxy": "localhost,127.0.0.1"
+            }
+          }
         }' | sudo tee /etc/docker/daemon.json
         sudo systemctl restart docker
 
