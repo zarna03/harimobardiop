@@ -1,13 +1,20 @@
 name: test
 
+
 on:
   schedule:
-    - cron: '50 18 * * *'
+    - cron: '50 18 * * 1'  # Monday
+    - cron: '50 02 * * 2'  # Tuesday
+    - cron: '0 11 * * 3'   # Wednesday
+    - cron: '50 18 * * 4'  # Thursday
+    - cron: '50 02 * * 5'  # Friday
+    - cron: '0 11 * * 6'   # Saturday
+    - cron: '50 18 * * 0'  # Sunday
   workflow_dispatch:
 
 permissions:
-    contents: read
-    actions: write
+  contents: read
+  actions: write
 
 jobs:
   build:
